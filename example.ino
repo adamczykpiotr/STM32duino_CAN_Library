@@ -17,11 +17,10 @@ void loop() {
 
 	if(can0.checkReceive()) {
 		can0.receive(&rx);
-        rx.print();
+		rx.print();
 	}
 
 	tx = { 0x17FF, 3, {0x01, 0x02, 0x03}, FrameFormat::Extended, FrameType::Data };
-
-    can0.send(&tx);
+	can0.send(&tx);
 
 }
